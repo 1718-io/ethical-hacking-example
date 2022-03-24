@@ -1,0 +1,5 @@
+coverage
+mock
+ddt
+coveralls
+sphinx-rtd-theme

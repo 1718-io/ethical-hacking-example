@@ -1,0 +1,1 @@
+2022-03-22 04:04:02 [ERROR] : str: data/directories.dat is not a file  in /usr/local/lib/python3.9/dist-packages/opendoor-4.0.1b0-py3.9.egg/src/lib/package/exceptions.py -> __init__() line 26

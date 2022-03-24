@@ -1,0 +1,3 @@
+2022-03-22 04:10:43 [ERROR] : str: ambiguous option: --report could match --reports, --reports-dir in /usr/local/lib/python3.9/dist-packages/opendoor-4.0.1b0-py3.9.egg/src/lib/io/exceptions.py -> __init__() line 26
+2022-03-22 04:11:10 [ERROR] : str: ambiguous option: --report could match --reports, --reports-dir in /usr/local/lib/python3.9/dist-packages/opendoor-4.0.1b0-py3.9.egg/src/lib/io/exceptions.py -> __init__() line 26
+2022-03-22 04:52:18 [ERROR] : ReporterError: Unable to get reporter `controlecitoyenelection.com.security.report`. Reason: module 'src.lib.reporter.plugins' has no attribute 'controlecitoyenelection.com.security.report' in /usr/local/lib/python3.9/dist-packages/opendoor-4.0.1b0-py3.9.egg/src/lib/browser/exceptions.py -> __init__() line 25
