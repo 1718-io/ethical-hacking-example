@@ -100,3 +100,10 @@ opendoor  --reports json,html --reports-dir radiojaune.com --host https://contro
 opendoor  --reports json,html --reports-dir radiojaune.com --host https://tekton.dev
 opendoor  --reports json,html --reports-dir radiojaune.com --host https://kubernetes.io
 ```
+
+## ANNEX B. Contributor's Cheatsheet
+
+
+```bash
+git add -A && git commit -m "finishing hugo project setup" && git push -u origin HEAD
+```
