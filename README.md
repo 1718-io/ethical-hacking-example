@@ -89,3 +89,14 @@ npm run clean
 
 
 ```
+
+
+## ANNEX A. `OpenDoor` Cheatsheet
+
+To run OWASP security scanner with default dictionnaries, wordlists, and rainbows :
+
+```bash
+opendoor  --reports json,html --reports-dir radiojaune.com --host https://controlecitoyenelection.com
+opendoor  --reports json,html --reports-dir radiojaune.com --host https://tekton.dev
+opendoor  --reports json,html --reports-dir radiojaune.com --host https://kubernetes.io
+```
