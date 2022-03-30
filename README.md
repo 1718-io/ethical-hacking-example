@@ -182,6 +182,7 @@ https://www.youtube.com/watch?v=vGvQrcfLSLg&t=814s
 https://alibaba.com;, terraform / pulumi helm chart :
 * goal 1 : to deploy a web app which connects to a MySQL DataBase, so with a statefulset for the MySQL CLuster at least. Examples :
   * https://medium.com/linuxworld-informatics-pvt-ltd/helm-is-a-tool-to-manage-applications-within-kubernetes-4f730ef11ec9
+  * https://github.com/amit17133129/DEPLOYING-A-WORDPRESS-APPLICATION-WITH-MYSQL-DATABASE-IN-K8S-Cluster-USING-HELM-ON-AWS/blob/master/README.md
 * goal 2 : instead opf the WordPress webapp, we must deploy the acutal source code of the website
 * goal 3 : THis web app must be scallable, and have authentication. Authentication module might have to be changed, to be able to scale up.
 * goal 4 : kick ouit MySQL and replace by MariaDB
