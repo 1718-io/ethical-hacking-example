@@ -70,6 +70,10 @@ export GULP_NODE_FETCH_VERSION=${GULP_NODE_FETCH_VERSION:-"^2.6.1"}
 export CONCAT_STREAM_VERSION=${CONCAT_STREAM_VERSION:-"^2.0.0"}
 export TOML_VERSION=${TOML_VERSION:-"^3.0.0"}
 
+export YAML_VERSION=${YAML_VERSION:-"^1.10.2"}
+export JS_YAML_VERSION=${JS_YAML_VERSION:-"^4.1.0"}
+
+
 
 # ${GULP_NODE_SASS_VERSION}
 
@@ -127,7 +131,9 @@ npm uninstall --save-dev \
     @babel/preset-env \
     node-fetch \
     concat-stream \
-    toml
+    toml \
+    yaml \
+    js-yaml
 
 npm i --save-dev \
     node-sass@${GULP_NODE_SASS_VERSION} \
@@ -155,4 +161,6 @@ npm i --save-dev \
     @babel/preset-env@${GULP_BABEL_PRESET_ENV_VERSION} \
     node-fetch@${GULP_NODE_FETCH_VERSION} \
     concat-stream@${CONCAT_STREAM_VERSION} \
-    toml@${TOML_VERSION}
+    toml@${TOML_VERSION} \
+    yaml@${YAML_VERSION} \
+    js-yaml@${JS_YAML_VERSION}

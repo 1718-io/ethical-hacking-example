@@ -15,33 +15,36 @@ ls -alh  ./.npm.scripts/prod/env.sh
 source ./.npm.scripts/prod/env.sh
 echo "# ------ ------ ------ ------ ------ ------ ------ #"
 echo "# ------ -  PATH=[${PATH}]"
+echo "# ------ -  HUGO_BASE_URL=[${HUGO_BASE_URL}]"
 echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 # ----
-#   1./ Will run the npm prod build,
-#   2./ then copy to 'dist/', and finally will
-#   3./ then will generate the CNAME file into the dist folder
+#   1./ Will run the hugo prod build,
+#   2./ then copy the content of the 'public/' folder, to the 'dist/' folder
 # ---
 
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 # -- 1./ run the npm prod build,
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
-echo "# -- 1./ run the npm prod build,"
+echo "# -- 1./ run the hugo prod build,"
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
 
 
+# cleaning public folder
+if [ -d public/ ]; then
+  rm -fr public/
+fi;
+mkdir public/
 
-echo "# ----    NO TASK IN PROD BUILD FOR NOW"
-echo "# ----    idea : purgecss, pug to resolve and pack dependencies"
+go version || $(echo "You must install golang >= 1.16+"; exit 37;)
+hugo -b ${HUGO_BASE_URL}
 
-# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
-# -- 2./ then copy to 'dist/', and finally will
-# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
-echo "# -- 2./ then copy to 'dist/', and finally will"
+echo "# -- 2./ copy content of the 'public/' folder, to the 'dist/' folder,"
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
+
 
 if [ -d dist/ ]; then
   rm -fr dist/
@@ -49,12 +52,7 @@ fi;
 mkdir -p dist/
 
 
-cp ./*.html dist/
-cp ./*.css dist/
-cp ./config.json dist/
-cp ./affiche-*.jpg dist/
-cp ./favicon.ico dist/
-
+cp -fR ./public/* dist/
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 # -- 3./ then will generate the CNAME file into the dist folder
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #

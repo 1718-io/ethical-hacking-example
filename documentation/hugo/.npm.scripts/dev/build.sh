@@ -14,23 +14,45 @@ ls -alh ./.npm.scripts/dev/env.sh
 source ./.npm.scripts/dev/env.sh
 echo "# ------ ------ ------ ------ ------ ------ ------ #"
 echo "# ------ -  PATH=[${PATH}]"
+echo "# ------ -  HUGO_HOST=[${HUGO_HOST}]"
+echo "# ------ -  HUGO_PORT=[${HUGO_PORT}]"
+echo "# ------ -  HUGO_BASE_URL=[${HUGO_BASE_URL}]"
+echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
+echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 echo "# ----    NO OPERATIONS IN DEV BUILD FOR NOW"
 echo "# --- # --- # --- # --- # --- # --- # --- # --- # --- # --- # --- #"
 # ----
-#   1./ Will run the npm dev build,
-#   2./ then copy to 'dist/', and finally will
-#   3./ then will generate the CNAME file into the dist folder
+#   1./ Will run the hugo dev build,
+#   2./ then copy content of the 'public/' to the 'dist/' folder
 # ---
 
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 # -- 1./ run the npm dev build,
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
-echo "# -- 1./ run the npm dev build,"
+echo "# -- 1./ run the npm dev build : the hugo build"
 echo "# -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #"
 
-echo "nothing in the dev build for the moment"
+
+# export PATH=$PATH:/usr/local/go/bin
+# export HUGO_HOST=${HUGO_HOST:-"127.0.0.1"}
+# export HUGO_PORT=${HUGO_PORT:-"4547"}
+# export HUGO_BASE_URL="http://127.0.0.1:5445"
+# export HUGO_BASE_URL=${HUGO_BASE_URL:-"http://${HUGO_HOST}:${HUGO_PORT}"}
+
+# export PATH=$PATH:/usr/local/go/bin && go version || $(echo "You must install golang >= 1.16+"; exit 37;)
+go version || $(echo "You must install golang >= 1.16+"; exit 37;)
+
+# cleaning public folder
+if [ -d public/ ]; then
+  rm -fr public/
+fi;
+mkdir public/
+
+hugo -b ${HUGO_BASE_URL}
+
+
 
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- #
 # -- 2./ then copy to 'dist/', and finally will

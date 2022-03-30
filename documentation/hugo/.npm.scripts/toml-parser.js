@@ -2,8 +2,8 @@ var toml = require('toml');
 var concat = require('concat-stream');
 var fs = require('fs');
 
-console.log(" value of TOML_FILE_PATH = " + process.env.TOML_FILE_PATH)
-fs.createReadStream(process.env.TOML_FILE_PATH, 'utf8').pipe(concat(function(data) {
+console.log(" value of HUGO_THEME_TOML_CONFIG_PATH = " + process.env.HUGO_THEME_TOML_CONFIG_PATH)
+fs.createReadStream(process.env.HUGO_THEME_TOML_CONFIG_PATH, 'utf8').pipe(concat(function(data) {
   var parsed = toml.parse(data);
   console.log(parsed);
 

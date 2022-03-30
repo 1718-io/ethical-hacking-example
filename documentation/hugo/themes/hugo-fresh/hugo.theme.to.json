@@ -1,0 +1,27 @@
+
+> @1718-io/ethical-hacking-example@0.0.0 parse-hugo-theme-toml
+> node .npm.scripts/toml-parser.js
+
+ value of HUGO_THEME_TOML_CONFIG_PATH = /tmp/TEMP_SPAWN_HOME-vbZaTYfWQx/theme.toml
+[Object: null prototype] {
+  name: 'Hugo Fresh',
+  license: 'MIT',
+  licenselink: 'https://github.com/StefMa/hugo-fresh/blob/master/LICENSE.md',
+  description: 'A Hugo adaptation of the Fresh theme from CSS Ninja',
+  homepage: 'https://github.com/StefMa/hugo-fresh',
+  tags: [
+    'responsive',
+    'one page',
+    'light',
+    'onepage',
+    'company',
+    'clean',
+    'landing page'
+  ],
+  features: [],
+  min_version: '0.45',
+  author: [Object: null prototype] {
+    name: 'Stefan M.',
+    homepage: 'https://github.com/StefMa'
+  }
+}

@@ -107,3 +107,91 @@ opendoor  --reports json,html --reports-dir radiojaune.com --host https://kubern
 ```bash
 git add -A && git commit -m "finishing hugo project setup" && git push -u origin HEAD
 ```
+
+
+## ANNEX C. Echanges avec l'équipe gérant https://controlecitoyenelection.com/elysee2022/ Team (Communications to the https://controlecitoyenelection.com/elysee2022/ Team)
+
+### Par la chaîne Yotube de "`Chamanjo`"
+
+
+#### Le Jeudi 24 Avril 2022, `07:36` le matin (Thursday, the 24th of April 2022, `07:36 am`)
+
+![premier commentaire après censure de mes messages il est v rai violents et insultants, par colère](./documentation/images/commentaires_youtube/premier.png)
+![deuxième commentaire après censure](./documentation/images/commentaires_youtube/deuxième.png)
+
+#### Le Jeudi 24 Avril 2022, `16:22` - après-midi (Thursday, the 24th of April 2022, `4:22 pm`)
+
+Je retourne sur la page où j'ai laissé le commentaire initial, pour informer l'équipe du début de mon travail en donnant l'URL du repository Github
+
+![troisième commentaire après censure](./documentation/images/commentaires_youtube/troisieme.png)
+
+#### Le Jeudi 24 Avril 2022, `19:41` - soir (Thursday, the 24th of April 2022, `7:41 pm`)
+
+Je retourne sur la page où j'ai laissé le commentaire un seconde fois, après une première censure, et je constate que mon commentaire a à nouveau été censuré.
+
+Je le poste une troisième fois, pour que l'équipe soit informée du début de mon travail en donnant l'URL du repository Github :
+
+
+
+Le texte du commentaire / message que j'ai laissé : ccc
+
+
+#### Le Jeudi 24 Avril 2022, `20:41` - soir (Thursday, the 24th of April 2022, `20:41 pm`)
+
+Le `YouTuber` "`Chamanjo`" était en diffusion Live Streaming, a proposé aux auditeurs de passer en direct, en communiquant le lien StreamYard.
+
+J'ai pu dire quelques mots en tant sque citoyen, et en ai profité pour évoquer la problématique que je traite ici.
+
+J'ai proposé de présenter publiquement mes excuses, pour les propos insultants que j'ai tenu sous l'effet de la colère, dans mes premiers commentaires YouTube.
+
+Suite à quoi j'ai été invité à venir dans une prochaine émission pour venir en discuter en live, avec les tenants du projet "derrière" https://controlecitoyenelection.com/
+
+Désormais, il sera donc probablement possible de communiquer à l'équipe, totues les vulnérabilités découvetes, avant leur publication.
+
+Cette expérience va donc techniquement, tout autant que politiquement, devenir intéressante. Un réel enjeu, un réel intérêt technique.
+
+Mon échange oral, bien maladroit, et spontané, lors de la diffusion live avec "`ChamanJo`" et les participants de l'émission : https://www.youtube.com/watch?v=x5NVOURqros&t=3595s
+
+Suite : je vais poursuivre la découverte des vulnérabilités en gardant confidentielles celles-ci, jusqu'au prochain échange avec l'équipe.
+
+
+#### Le Vendredi 25 Avril 2022, `21:09` - soir (Friday, the 25th of April 2022, `21:09 pm`)
+
+Je trouve une nouvelle publication concernant ce projet de contrôle citoyen des élections: https://www.youtube.com/watch?v=9NOPcjTuEPU
+
+Dans cette diffusion, les tenants du projet font un rapide état de l'avancement du projet, à destination du grand public.
+
+Je n'ai pas été invité pour cette diffusion.
+
+Il s'avère que cette diffusion a eut lieu avant la diffusion à laquelle j'ai participé le Jeudi 24 Mars 2022.
+
+
+
+#### Le Mardi 29 Mars: un nouveau tournant
+
+J'ai aujourd'hui été invité dans une diffusion livestream, qui a été extrêment plaisante et encourageante.
+
+Le projet a des besoins immédiat, de scallabilité, pour "que ça tienne quand des dizaines de miliers de photos seront evoyées par des téléphone smobiles (pour les enregistremnts de PV de bureaux de vote)
+
+J'ai donc proposé d'aider pour changer l'infrastructure, et je vais donc déployer l'ensemble du site web dans un cluster Kubernetes. SI j'en ai le temps, je ferais un opérateur FluxCD.
+
+
+
+https://www.youtube.com/watch?v=vGvQrcfLSLg&t=814s
+
+https://alibaba.com;, terraform / pulumi helm chart :
+* goal 1 : to deploy a web app which connects to a MySQL DataBase, so with a statefulset for the MySQL CLuster at least. Examples :
+  * https://medium.com/linuxworld-informatics-pvt-ltd/helm-is-a-tool-to-manage-applications-within-kubernetes-4f730ef11ec9
+* goal 2 : instead opf the WordPress webapp, we must deploy the acutal source code of the website
+* goal 3 : THis web app must be scallable, and have authentication. Authentication module might have to be changed, to be able to scale up.
+* goal 4 : kick ouit MySQL and replace by MariaDB
+
+
+BOM :
+* I need an example wordpess app,
+* I need the helm chart for the example wordpress app
+* I need the source coe of the actual website
+* I need a pipeline to run all the standard operations of the infrastructure :
+  * the reation of the infrastructure : pulumi / terraform
+  * backup / restore of database (so i need the scripts, but well i think they already got that) : backup must happen every hour ?
+  *

@@ -25,12 +25,14 @@
     "deploy:gh_pages:staging": "./.npm.scripts/staging/deploy/gh_pages.sh",
     "deploy:heroku:prod": "./.npm.scripts/prod/deploy/heroku.sh",
     "deploy:gh_pages:prod": "npm run clean && npm run build:prod && ./.npm.scripts/prod/deploy/gh_pages.sh",
-    "ci:release:gh_pages": "./.npm.scripts/release/gh_pages.sh",
-    "ci:release:heroku": "./.npm.scripts/release/heroku.sh",
+    "ci:release:gh_pages": "./.npm.scripts/ci/release/gh_pages.sh",
+    "ci:release:heroku": "./.npm.scripts/ci/release/heroku.sh",
     "spawn:project:clean": "echo \"cleaning hugo project\" && ./.npm.scripts/clean-hugo.sh",
     "spawn:project:gen": "echo \"spawn up new hugo project from Hugo theme\" && ./.npm.scripts/spawn.sh",
+    "spawn:project:gen:hugo-prj-config-yaml": "node .npm.scripts/hugo-config-processor-yaml.js",
+    "spawn:project:gen:hugo-prj-config-json": "node .npm.scripts/hugo-config-processor-json.js",
     "clean:hugo": "echo \"cleaning hugo public\" && gulp clean:hugo",
-    "parse-hugo-them-toml": "node .npm.scripts/toml-parser.js"
+    "parse-hugo-theme-toml": "node .npm.scripts/toml-parser.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,9 @@
     "url": "https://github.com/1718-io/ethical-hacking-example/issues"
   },
   "homepage": "https://github.com/1718-io/ethical-hacking-example/#readme",
+  "dependencies": {
+    "bulma": "^0.9.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
@@ -66,12 +71,11 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "imagemin-pngquant": "^9.0.2",
+    "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.7",
     "node-sass": "^7.0.1",
     "readable-stream": "^3.6.0",
-    "toml": "^3.0.0"
-  },
-  "dependencies": {
-    "bulma": "^0.9.3"
+    "toml": "^3.0.0",
+    "yaml": "^1.10.2"
   }
 }
